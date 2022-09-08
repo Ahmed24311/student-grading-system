@@ -3,35 +3,35 @@
     "id": 1,
     "name": "Ahmed",
     "degrees": [48, 50, 30],
-    "comment": "Congrats you passed🎉",
+    "grade": "A",
     "total": "128/150"
   },
   {
     "id": 2,
     "name": "Mai",
     "degrees": [0, 32, 30],
-    "comment": "Unfortionately you failed",
+    "grade": "F",
     "total": "62/150"
   },
   {
     "id": 3,
     "name": "Maryam",
-    "degrees": [20, 32, 30],
-    "comment": "Congrats you passed🎉",
-    "total": "82/150"
+    "degrees": [20, 32, 50],
+    "grade": "C",
+    "total": "102/150"
   },
   {
     "id": 4,
     "name": "Hossam",
     "degrees": [5, 42, 30],
-    "comment": "Congrats you passed🎉",
+    "grade": "D",
     "total": "77/150"
   },
   {
     "id": 5,
     "name": "Bashira",
-    "degrees": [5, 42, 30],
-    "comment": "Congrats you passed🎉",
-    "total": "77/150"
+    "degrees": [38, 42, 30],
+    "grade": "B",
+    "total": "110/150"
   }
 ]

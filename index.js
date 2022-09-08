@@ -20,9 +20,6 @@ yargs.command({
       type: "array",
       demandOption: true,
     },
-    comment: {
-      type: 'string',
-    },
   },
   handler: () => {
     functionality.addStudent(yargs.argv.id, yargs.argv.name, yargs.argv.degree);
@@ -34,7 +31,7 @@ yargs.command({
   builder: {
     id: {
       type: "number",
-      demandOption: true, //required
+      demandOption: true,
     },
   },
   handler: () => {
@@ -47,7 +44,7 @@ yargs.command({
   builder: {
     id: {
       type: 'number',
-      demandOption: true, //required
+      demandOption: true,
     },
   },
   handler: () => {
@@ -78,4 +75,5 @@ yargs.command({
     functionality.updateStudent(yargs.argv.id, yargs.argv.name);
   },
 });
+
 yargs.parse();

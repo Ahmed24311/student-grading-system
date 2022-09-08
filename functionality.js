@@ -31,20 +31,30 @@ const addStudent = (id, name, degrees) => {
   if (inputData) return console.log("Already exists!");
   // Get the degrees array and calculate it's sum
   const total = degrees.reduce((sum, deg) => +sum + +deg);
-  // Add the comment
-  const comment =
-    total < 75 ? "Unfortionately you failed" : "Congrats you passed🎉";
+
+  // Calculate the grade
+  const grade =
+    total < 150 * 0.90 && total >= 150 * 0.80
+      ? "A"
+      : total < 150 * 0.80 && total >= 150 * 0.70
+      ? "B"
+      : total < 150 * 0.70 && total >= 150 * 0.60
+      ? "C"
+      : total < 150 * 0.60 && total >= 150 * 0.50
+      ? "D"
+      : "F";
+
   data.push({
     id,
     name,
     degrees,
-    comment,
+    grade,
     total: total + "/150",
   });
   // Write data to file
   saveData(data);
   console.log("Data is saved");
-  console.log(`Total: ${total}/150, ${comment}`);
+  console.log(`Total: ${total}/150, ${grade}`);
 };
 
 //  ************** Read student data **************
@@ -100,6 +110,7 @@ const updateStudent = (id, name) => {
   saveData(newData);
   console.log(newData.find((el) => el.id == id));
 };
+
 module.exports = {
   addStudent,
   readStudent,
