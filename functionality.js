@@ -1,4 +1,4 @@
-//NOTE Please enter the command in this form so that all degrees go in the array and not get any errors
+//NOTE Please enter terminal commands in this form "when tying to add new data" to get the desired output
 //NOTE ===> node index.js add --id=00 --name='' --degree=00 --degree=00 --degree=00
 
 const fs = require("fs");
