@@ -88,7 +88,7 @@ const listStudents = () => {
   const data = readInput();
   data.forEach((el) =>
     console.log(
-      `Student ${el.id},\nName: ${el.name}, Degrees: [${el.degrees}], Total: ${el.total}\n`
+      `Student ${el.id},\nName: ${el.name}, Degrees: [${el.degrees}], Grade: ${el.grade}\n`
     )
   );
 };
