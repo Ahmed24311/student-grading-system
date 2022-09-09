@@ -37,7 +37,7 @@ const addStudent = (id, name, degrees) => {
   
   // Calculate the grade
   const grade =
-    total < 150 && total >= 150 * 0.80
+    total <= 150 && total >= 150 * 0.80
       ? "A"
       : total < 150 * 0.80 && total >= 150 * 0.70
       ? "B"
@@ -45,7 +45,7 @@ const addStudent = (id, name, degrees) => {
       ? "C"
       : total < 150 * 0.60 && total >= 150 * 0.50
       ? "D"
-      : total < 150 * 0.5 && total > 0 
+      : total < 150 * 0.5 && total >= 0 
       ? "F"
       : "Invalid";
 
