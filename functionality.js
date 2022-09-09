@@ -1,6 +1,3 @@
-//NOTE Please enter terminal commands in this form "when tying to add new data" to get the desired output
-//NOTE ===> node index.js add --id=00 --name='' --degree=00 --degree=00 --degree=00
-
 const fs = require("fs");
 // Read function
 const readInput = () => {
@@ -33,9 +30,10 @@ const addStudent = (id, name, degrees) => {
   // Get the degrees array and calculate it's sum
   const total = degrees.reduce((sum, deg) => +sum + +deg);
   
-  //NOTE Use this instead of the line above if you enter the degrees like this (--degree="12, 45, 48")==> 1) change the degree type in the "add" command from "array" to "string"
+  //If you enter the degrees like this (--degree="12, 45, 48")
+  //NOTE 1) change the degree type in the "add" command from "array" to "string"
 
-  //const total = degrees.split(",").reduce((sum, deg) => +sum + +deg);
+  //const total = degrees.split(",").reduce((sum, deg) => +sum + +deg); //NOTE 2) Activate this line and comment out line 31
   
   // Calculate the grade
   const grade =
@@ -51,7 +49,7 @@ const addStudent = (id, name, degrees) => {
       ? "F"
       : "Invalid";
 
-  //NOTE 2) Remove this degrees.some() method
+  //NOTE 3) Remove this degrees.some() method
   if(grade == 'Invalid' || degrees.some( el => el < 0)) return console.log('Try again with values between 0 and 50');
   
   data.push({
@@ -68,6 +66,7 @@ const addStudent = (id, name, degrees) => {
 };
 
 //  ************** Read student data **************
+
 const readStudent = (id) => {
   const data = readInput();
   // Check if the id exists or not, then print message accordingly
@@ -93,6 +92,7 @@ const deleteStudent = (id) => {
 };
 
 // ************** Display all students **************
+
 const listStudents = () => {
   // Read data
   const data = readInput();
