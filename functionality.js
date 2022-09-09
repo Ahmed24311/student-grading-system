@@ -29,12 +29,17 @@ const addStudent = (id, name, degrees) => {
     return el.id === id;
   });
   if (inputData) return console.log("Already exists!");
+
   // Get the degrees array and calculate it's sum
   const total = degrees.reduce((sum, deg) => +sum + +deg);
+  
+  //NOTE Use this instead of the line above if you enter the degrees like this (--degree="12, 45, 48")==> 1) change the degree type in the "add" command from "array" to "string"
 
+  //const total = degrees.split(",").reduce((sum, deg) => +sum + +deg);
+  
   // Calculate the grade
   const grade =
-    total < 150 * 0.90 && total >= 150 * 0.80
+    total < 150 && total >= 150 * 0.80
       ? "A"
       : total < 150 * 0.80 && total >= 150 * 0.70
       ? "B"
@@ -42,8 +47,13 @@ const addStudent = (id, name, degrees) => {
       ? "C"
       : total < 150 * 0.60 && total >= 150 * 0.50
       ? "D"
-      : "F";
+      : total < 150 * 0.5 && total > 0 
+      ? "F"
+      : "Invalid";
 
+  //NOTE 2) Remove this degrees.some() method
+  if(grade == 'Invalid' || degrees.some( el => el < 0)) return console.log('Try again with values between 0 and 50');
+  
   data.push({
     id,
     name,
@@ -54,7 +64,7 @@ const addStudent = (id, name, degrees) => {
   // Write data to file
   saveData(data);
   console.log("Data is saved");
-  console.log(`Total: ${total}/150, ${grade}`);
+  console.log(`Total: ${total}/150\nGrade: ${grade}`);
 };
 
 //  ************** Read student data **************
