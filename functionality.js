@@ -30,10 +30,11 @@ const addStudent = (id, name, degrees) => {
   // Get the degrees array and calculate it's sum
   const total = degrees.reduce((sum, deg) => +sum + +deg);
   
-  //If you enter the degrees like this (--degree="12, 45, 48")
+  //NOTE If you enter the degrees like this (--degree="12, 45, 48")
   //NOTE 1) change the degree type in the "add" command from "array" to "string"
 
-  //const total = degrees.split(",").reduce((sum, deg) => +sum + +deg); //NOTE 2) Activate this line and comment out line 31
+  //NOTE 2) Activate this line and comment out line 31
+  //const total = degrees.split(",").reduce((sum, deg) => +sum + +deg); 
   
   // Calculate the grade
   const grade =
@@ -49,7 +50,7 @@ const addStudent = (id, name, degrees) => {
       ? "F"
       : "Invalid";
 
-  //NOTE 3) Remove this degrees.some() method
+  //NOTE 3) Remove this degrees.some() method bc it won't work with a string input
   if(grade == 'Invalid' || degrees.some( el => el < 0)) return console.log('Try again with values between 0 and 50');
   
   data.push({
@@ -61,8 +62,7 @@ const addStudent = (id, name, degrees) => {
   });
   // Write data to file
   saveData(data);
-  console.log("Data is saved");
-  console.log(`Total: ${total}/150\nGrade: ${grade}`);
+  console.log(`Data is saved,\nTotal: ${total}/150\nGrade: ${grade}`);
 };
 
 //  ************** Read student data **************
