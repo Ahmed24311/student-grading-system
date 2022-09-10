@@ -2,7 +2,7 @@
 
 ### important!
 
-**Please enter terminal commands in this form "when tying to add new data" to get the desired output**
+Please enter terminal commands in this form "when tying to add new data" to get the desired output.
 
 ```
 node index.js add --id=00 --name='' --degree=00 --degree=00 --degree=00
