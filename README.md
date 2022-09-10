@@ -1,6 +1,6 @@
 # student-grading-system
 
-**important!**
+### important!
 
 **Please enter terminal commands in this form "when tying to add new data" to get the desired output**
 
